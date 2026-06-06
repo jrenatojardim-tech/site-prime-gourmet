@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Gourmet Club Baixada Santista | Peça 2, Pague 1</title>
+    <meta name="description" content="Um guia turístico e gastronômico que eleva sua experiência em estabelecimentos parceiros na Baixada Santista. Peça 2, Pague 1. Use o cupom BS10.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        prime: {
+                            gold: '#FCB637',    /* Pantone 143 C Oficial */
+                            neutral: '#2D2926', /* Pantone Neutral Black C Oficial */
+                            black: '#000000',   /* Preto Puro Oficial */
+                            white: '#FFFFFF'    /* Branco Puro Oficial */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .bg-pattern {
+            background-color: #2D2926;
+            background-image: url('image_295574.png');
+            background-repeat: repeat;
+        }
+        
+        /* Animação personalizada para um piscar mais elegante */
+        @keyframes piscar {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        .animate-piscar {
+            animation: piscar 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-prime-white text-prime-neutral font-sans antialiased selection:bg-prime-gold selection:text-prime-black">
+
+    <header class="fixed w-full bg-prime-black text-prime-white z-50 shadow-2xl border-b border-prime-neutral transition-all">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            
+            <div class="flex items-center">
+                <img src="LOGO-PRIME-GOURMET-CLUB NEW-05 (1).png" alt="Prime Gourmet Club" class="h-10 md:h-12 object-contain">
+            </div>
+            
+            <div class="flex items-center gap-6">
+                <span class="hidden md:block text-xs text-gray-400 font-semibold tracking-widest uppercase">Baixada Santista</span>
+                
+                <a href="#baixar" class="bg-transparent border border-prime-gold text-prime-gold px-8 py-2 rounded-full font-bold hover:bg-prime-gold hover:text-prime-black transition duration-300 hidden sm:block tracking-wide text-sm uppercase">
+                    Seja Membro VIP
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="pt-36 pb-24 bg-pattern text-prime-white min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-prime-gold/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-16 relative z-10">
+            <div class="md:w-[55%] space-y-8">
+                <div class="inline-flex items-center gap-2 border border-prime-gold/40 bg-prime-black/60 px-5 py-2 rounded-full text-xs font-bold tracking-widest uppercase text-prime-gold backdrop-blur-md">
+                    <i class="fa-solid fa-gem"></i> Uma forma elegante de utilizar descontos.
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight drop-shadow-lg">
+                    Um guia turístico e gastronômico que eleva sua experiência:<br>
+                    <span class="text-prime-gold">Peça 2, Pague 1.</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-gray-300 font-normal leading-relaxed">
+                    A perfeita combinação entre elegância e acessibilidade inteligente. Desfrute do melhor em estabelecimentos parceiros na Baixada Santista.
+                </p>
+                
+                <div class="pt-4">
+                    <div class="bg-prime-neutral border border-prime-gold/40 p-8 rounded-[2rem] max-w-lg text-center relative shadow-2xl transform hover:scale-[1.02] transition duration-500">
+                        <div class="inline-flex items-center gap-2 border border-prime-gold bg-[#4A3D25]/40 px-6 py-2 rounded-full text-sm font-bold tracking-[0.15em] uppercase text-prime-gold mb-6 shadow-sm">
+                            <i class="fa-solid fa-gift"></i> Privilégio de Boas-Vindas
+                        </div>
+                        
+                        <p class="text-prime-white text-lg font-medium mb-8 leading-relaxed">
+                            Utilize o código abaixo no aplicativo e garanta um <strong class="text-prime-white font-bold bg-[#4A3D25]/60 px-2 py-0.5 rounded border border-prime-gold/20">desconto exclusivo de R$ 10</strong> na sua assinatura anual.
+                        </p>
+                        
+                        <div class="bg-prime-black py-8 px-4 rounded-[1.5rem] shadow-inner">
+                            <span class="text-7xl md:text-8xl font-black text-prime-gold tracking-widest animate-piscar block">BS10</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:w-[45%] flex justify-center">
+                <div class="relative w-full max-w-md rounded-[3rem] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.8)] border-4 border-prime-black bg-prime-white transform hover:scale-105 transition duration-500">
+                    <img src="image_1ecb01.jpg" alt="Aplicativo Prime Gourmet" class="w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-prime-white text-prime-neutral">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-prime-black mb-4">As melhores experiências da Baixada Santista</h2>
+                <p class="text-xl text-gray-600 font-medium mt-4">
+                    Inspire-se em <a href="https://instagram.com/primegourmetbaixadasantista" target="_blank" class="text-prime-black font-bold hover:text-prime-gold border-b-2 border-prime-gold pb-1 transition">@primegourmetbaixadasantista</a>.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="rounded-2xl overflow-hidden shadow-2xl group relative cursor-pointer border border-gray-200">
+                    <img src="image_2a23c6.jpg" alt="Alta Gastronomia" class="w-full h-[500px] object-cover transform group-hover:scale-105 transition duration-700 ease-in-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-prime-black via-prime-black/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-10">
+                        <div class="flex justify-between items-end">
+                            <div>
+                                <span class="text-prime-gold text-xs font-bold tracking-widest uppercase mb-2 block">Gastronomia Contemporânea</span>
+                                <h3 class="text-3xl font-black text-prime-white mb-2">Bistrôs e Experiências</h3>
+                            </div>
+                            <div class="bg-prime-white text-prime-black font-bold px-6 py-3 rounded-full text-sm uppercase tracking-wide shadow-lg">
+                                Peça 2, Pague 1
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden shadow-2xl group relative cursor-pointer border border-gray-200">
+                    <img src="image_2a2025.jpg" alt="Cortes Nobres" class="w-full h-[500px] object-cover transform group-hover:scale-105 transition duration-700 ease-in-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-prime-black via-prime-black/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-10">
+                        <div class="flex justify-between items-end">
+                            <div>
+                                <span class="text-prime-gold text-xs font-bold tracking-widest uppercase mb-2 block">Cortes Especiais</span>
+                                <h3 class="text-3xl font-black text-prime-white mb-2">Restaurantes Premium</h3>
+                            </div>
+                            <div class="bg-prime-white text-prime-black font-bold px-6 py-3 rounded-full text-sm uppercase tracking-wide shadow-lg">
+                                Peça 2, Pague 1
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-gray-100" id="como-funciona">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="text-prime-gold text-sm font-black tracking-[0.2em] uppercase block mb-3">Acesso Exclusivo</span>
+                <h2 class="text-4xl md:text-5xl font-black text-prime-black">Como aproveitar os benefícios</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                <div class="text-center bg-prime-white p-10 rounded-2xl shadow-lg border border-gray-200 hover:-translate-y-2 transition duration-300">
+                    <div class="w-24 h-24 bg-prime-neutral rounded-full flex items-center justify-center text-4xl text-prime-gold mx-auto shadow-xl mb-8 border-4 border-prime-white">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-wider text-prime-black">1. O App</h3>
+                    <p class="text-gray-600 font-medium leading-relaxed">Faça o download do aplicativo oficial. Na tela de ativação da assinatura anual, insira o código <strong class="text-prime-gold font-bold bg-prime-neutral text-prime-white px-2 py-1 rounded">BS10</strong> para garantir R$ 10 de desconto.</p>
+                </div>
+
+                <div class="text-center bg-prime-white p-10 rounded-2xl shadow-lg border border-gray-200 hover:-translate-y-2 transition duration-300">
+                    <div class="w-24 h-24 bg-prime-neutral rounded-full flex items-center justify-center text-4xl text-prime-gold mx-auto shadow-xl mb-8 border-4 border-prime-white">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-wider text-prime-black">2. A Escolha</h3>
+                    <p class="text-gray-600 font-medium leading-relaxed">Navegue pelas ofertas de nossa curadoria rigorosa e selecione o restaurante, hotel ou atração da Baixada Santista.</p>
+                </div>
+
+                <div class="text-center bg-prime-white p-10 rounded-2xl shadow-lg border border-gray-200 hover:-translate-y-2 transition duration-300">
+                    <div class="w-24 h-24 bg-prime-neutral rounded-full flex items-center justify-center text-4xl text-prime-gold mx-auto shadow-xl mb-8 border-4 border-prime-white">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 uppercase tracking-wider text-prime-black">3. O Benefício</h3>
+                    <p class="text-gray-600 font-medium leading-relaxed">Faça a leitura do QR Code no estabelecimento. Ao pedir dois pratos ou ingressos, o de igual ou menor valor será cortesia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-pattern text-prime-white border-y border-prime-black">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-16">
+                <div class="md:w-1/2">
+                    <span class="text-prime-gold text-sm font-black tracking-[0.2em] uppercase block mb-3">Privilégio de Boas-Vindas</span>
+                    <h2 class="text-4xl md:text-5xl font-black mb-6 leading-tight">Um investimento que retorna já nas primeiras experiências.</h2>
+                    <p class="text-gray-300 font-medium text-lg mb-8">
+                        Ser membro do Prime Gourmet Club transforma o consumo em uma experiência inteligente. O valor da anuidade é facilmente recuperado nos seus primeiros usos.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-prime-gold/20 flex items-center justify-center shrink-0 mt-1 border border-prime-gold/50">
+                                <i class="fa-solid fa-check text-prime-gold text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-prime-white">Jantar de Alta Gastronomia</h4>
+                                <p class="text-gray-400 font-medium text-sm">Valor do prato principal: R$ 100,00</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-prime-gold/20 flex items-center justify-center shrink-0 mt-1 border border-prime-gold/50">
+                                <i class="fa-solid fa-check text-prime-gold text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-prime-white">Filosofia Peça 2, Pague 1</h4>
+                                <p class="text-gray-400 font-medium text-sm">O segundo prato de igual ou menor valor é cortesia do estabelecimento parceiro.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-[40%] w-full">
+                    <div class="bg-prime-black border border-prime-neutral rounded-2xl p-10 text-center shadow-2xl relative">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/3 h-1.5 bg-prime-gold rounded-b-md"></div>
+                        <h3 class="text-xl font-bold uppercase tracking-widest text-prime-white mb-2 mt-4">Assinatura Anual</h3>
+                        <p class="text-gray-500 line-through text-lg mb-6 font-medium">R$ 200,00</p>
+                        
+                        <div class="bg-prime-neutral border border-prime-gold/40 p-6 rounded-[1.5rem] mb-8 shadow-md">
+                            <p class="text-sm text-prime-white font-bold uppercase tracking-widest mb-4">Com o código ativado:</p>
+                            <div class="bg-prime-black py-4 rounded-xl border border-prime-black">
+                                <span class="text-5xl font-black text-prime-gold tracking-widest animate-piscar block">BS10</span>
+                            </div>
+                            <p class="text-green-400 text-sm font-bold mt-4 tracking-wide">- R$ 10,00 DE DESCONTO EXCLUSIVO</p>
+                        </div>
+                        
+                        <a href="#baixar" class="block w-full bg-prime-gold text-prime-black py-4 rounded-lg font-black text-sm uppercase tracking-widest hover:bg-yellow-500 transition duration-300">
+                            Ativar Cupom Agora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 bg-prime-white text-center" id="baixar">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-black text-prime-black mb-6">Comece agora mesmo.</h2>
+            <p class="text-xl text-gray-600 font-medium mb-12 max-w-2xl mx-auto">
+                Faça o download nas lojas oficiais, selecione a região <strong class="text-prime-black">Baixada Santista</strong> e insira o código <strong class="text-prime-gold bg-prime-black px-2 py-1 rounded ml-1">BS10</strong> na tela de ativação.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16">
+                <a href="https://apps.apple.com/br/app/prime-gourmet-club/id1500666866" target="_blank" class="flex items-center justify-start gap-4 bg-prime-black text-prime-white w-[240px] h-[68px] px-6 rounded-full hover:bg-prime-neutral transition duration-300 shadow-xl border border-transparent hover:border-gray-700">
+                    <i class="fa-brands fa-apple text-3xl"></i>
+                    <div class="text-left flex flex-col justify-center">
+                        <span class="text-[0.65rem] tracking-wider font-semibold text-gray-400">DISPONÍVEL NA</span>
+                        <span class="text-xl font-bold leading-none mt-0.5">App Store</span>
+                    </div>
+                </a>
+                
+                <a href="https://play.google.com/store/apps/details?id=club.gourmet.prime" target="_blank" class="flex items-center justify-start gap-4 bg-prime-black text-prime-white w-[240px] h-[68px] px-6 rounded-full hover:bg-prime-neutral transition duration-300 shadow-xl border border-transparent hover:border-gray-700">
+                    <i class="fa-brands fa-google-play text-2xl"></i>
+                    <div class="text-left flex flex-col justify-center">
+                        <span class="text-[0.65rem] tracking-wider font-semibold text-gray-400">DISPONÍVEL NO</span>
+                        <span class="text-xl font-bold leading-none mt-0.5">Google Play</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="inline-block bg-prime-neutral border border-prime-gold/40 px-16 py-10 rounded-[2rem] shadow-2xl">
+                <p class="text-prime-gold font-bold text-sm uppercase tracking-widest mb-4">Código de Benefício Ativo</p>
+                <div class="bg-prime-black py-6 px-12 rounded-[1.5rem] mb-6">
+                    <span class="text-7xl font-black text-prime-gold tracking-widest animate-piscar block">BS10</span>
+                </div>
+                <div class="inline-flex items-center gap-2 bg-[#4A3D25]/40 text-prime-white px-5 py-2 rounded-full text-sm font-bold border border-prime-gold/30">
+                    <i class="fa-solid fa-gift text-prime-gold"></i> Desconto Exclusivo de R$ 10 na Assinatura
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-prime-neutral text-gray-400 py-16 border-t border-prime-black">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start mb-6">
+                    <img src="LOGO-PRIME-GOURMET-CLUB NEW-05 (1).png" alt="Prime Gourmet Club" class="h-8 object-contain">
+                </div>
+                <p class="text-xs uppercase tracking-widest font-bold mb-2 text-gray-300">Região Autorizada: Baixada Santista</p>
+                <p class="text-xs font-medium">© 2026 Prime Gourmet Club. Todos os direitos reservados.</p>
+            </div>
+            
+            <div class="flex items-center gap-8 text-2xl">
+                <a href="https://instagram.com/primegourmetbaixadasantista" target="_blank" class="text-prime-white hover:text-prime-gold transition transform hover:scale-110"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="text-prime-white hover:text-prime-gold transition transform hover:scale-110"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="text-prime-white hover:text-prime-gold transition transform hover:scale-110"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
