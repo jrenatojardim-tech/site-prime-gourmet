@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prime Gourmet Club Baixada Santista | Peça 2, Pague 1</title>
-    <meta name="description" content="Um guia turístico e gastronômico que eleva sua experiência em estabelecimentos parceiros na Baixada Santista. Peça 2, Pague 1. Use o cupom BS10.">
+    <meta name="description" content="Um guia turístico e gastronômico que eleva sua experiência. Peça 2, Pague 1. Use o cupom BS10 (válido para qualquer região do Brasil).">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,10 +23,10 @@
                     },
                     colors: {
                         prime: {
-                            gold: '#FCB637',    /* Pantone 143 C Oficial */
-                            neutral: '#2D2926', /* Pantone Neutral Black C Oficial */
-                            black: '#000000',   /* Preto Puro Oficial */
-                            white: '#FFFFFF'    /* Branco Puro Oficial */
+                            gold: '#FCB637',    
+                            neutral: '#2D2926', 
+                            black: '#000000',   
+                            white: '#FFFFFF'    
                         }
                     }
                 }
@@ -56,6 +56,28 @@
         }
         .bg-gold-gradient:hover {
             background-position: 100% 0;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+            opacity: 0;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            opacity: 1;
+            padding-top: 1rem;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+            color: #FCB637;
+        }
+        .faq-item.active button {
+            color: #FCB637;
         }
     </style>
 </head>
@@ -102,11 +124,12 @@
                                 <i class="fa-solid fa-gift"></i> Privilégio de Boas-Vindas
                             </div>
                             <p class="text-prime-white text-lg font-medium mb-8 leading-relaxed">
-                                Utilize o código abaixo no aplicativo e garanta um <strong class="text-prime-black font-extrabold bg-prime-gold px-2 py-0.5 rounded shadow-lg">desconto exclusivo de R$ 10</strong> na sua assinatura anual.
+                                Utilize o código abaixo no aplicativo e garanta um <strong class="text-prime-black font-extrabold bg-prime-gold px-2 py-0.5 rounded shadow-lg">desconto exclusivo de R$ 10</strong> na sua assinatura anual válido para <strong>qualquer região do Brasil.</strong>
                             </p>
                             <div class="bg-prime-black/90 py-8 px-4 rounded-[1.5rem] shadow-inner border border-white/5 relative overflow-hidden">
                                 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-prime-gold to-transparent opacity-50"></div>
                                 <span class="text-7xl md:text-8xl font-black text-prime-gold tracking-widest animate-piscar block">BS10</span>
+                                <span class="text-[10px] uppercase tracking-widest text-gray-400 font-bold block mt-3">VÁLIDO EM TODAS AS REGIÕES DO APP</span>
                             </div>
                         </div>
                     </div>
@@ -132,33 +155,35 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] group relative cursor-pointer">
-                    <img src="portugues.png" alt="Alta Gastronomia" class="w-full h-[550px] object-cover transform group-hover:scale-110 transition duration-1000 ease-out">
-                    <div class="absolute inset-0 bg-gradient-to-t from-prime-black via-prime-black/50 to-transparent opacity-90 group-hover:opacity-100 transition duration-500"></div>
-                    <div class="absolute bottom-0 left-0 w-full p-12 transform translate-y-4 group-hover:translate-y-0 transition duration-500">
-                        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-                            <div>
-                                <span class="text-prime-gold text-sm font-bold tracking-widest uppercase mb-3 block">Gastronomia Contemporânea</span>
-                                <h3 class="text-4xl font-black text-prime-white mb-2 leading-tight">Bistrôs e Experiências</h3>
+                <div class="rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_30px_60px_rgba(252,182,55,0.2)] group relative cursor-pointer border border-transparent hover:border-prime-gold/30 transition-all duration-500">
+                    <img src="portugues.png" alt="Alta Gastronomia" class="w-full h-[550px] md:h-[600px] object-cover transform group-hover:scale-110 transition duration-1000 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-prime-black via-prime-black/60 to-transparent opacity-90 group-hover:opacity-100 transition duration-500"></div>
+                    
+                    <div class="absolute bottom-0 left-0 w-full p-6 md:p-10 transform translate-y-2 group-hover:translate-y-0 transition duration-500">
+                        <div class="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-6 bg-prime-black/40 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 group-hover:border-prime-gold/40 transition-colors duration-500">
+                            <div class="flex-1 w-full">
+                                <span class="text-prime-gold text-xs md:text-sm font-bold tracking-widest uppercase mb-3 block drop-shadow-md">Gastronomia Contemporânea</span>
+                                <h3 class="text-3xl md:text-4xl font-black text-prime-white mb-0 leading-tight drop-shadow-lg">Bistrôs e Experiências</h3>
                             </div>
-                            <div class="bg-gold-gradient text-prime-black font-black px-8 py-4 rounded-full text-sm uppercase tracking-wider shadow-[0_10px_20px_rgba(252,182,55,0.4)]">
-                                Peça 2, Pague 1
+                            <div class="shrink-0 bg-gold-gradient text-prime-black font-black px-8 py-4 rounded-full text-sm uppercase tracking-wider shadow-[0_10px_20px_rgba(252,182,55,0.3)] group-hover:shadow-[0_0_30px_rgba(252,182,55,0.6)] transform group-hover:scale-105 transition-all duration-300 whitespace-nowrap border border-white/20">
+                                <i class="fa-solid fa-ticket mr-2 opacity-80"></i> Peça 2, Pague 1
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] group relative cursor-pointer">
-                    <img src="carnesnobres.png" alt="Cortes Nobres" class="w-full h-[550px] object-cover transform group-hover:scale-110 transition duration-1000 ease-out">
-                    <div class="absolute inset-0 bg-gradient-to-t from-prime-black via-prime-black/50 to-transparent opacity-90 group-hover:opacity-100 transition duration-500"></div>
-                    <div class="absolute bottom-0 left-0 w-full p-12 transform translate-y-4 group-hover:translate-y-0 transition duration-500">
-                        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-                            <div>
-                                <span class="text-prime-gold text-sm font-bold tracking-widest uppercase mb-3 block">Cortes Especiais</span>
-                                <h3 class="text-4xl font-black text-prime-white mb-2 leading-tight">Restaurantes Premium</h3>
+                <div class="rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_30px_60px_rgba(252,182,55,0.2)] group relative cursor-pointer border border-transparent hover:border-prime-gold/30 transition-all duration-500">
+                    <img src="carnesnobres.png" alt="Cortes Nobres" class="w-full h-[550px] md:h-[600px] object-cover transform group-hover:scale-110 transition duration-1000 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-prime-black via-prime-black/60 to-transparent opacity-90 group-hover:opacity-100 transition duration-500"></div>
+                    
+                    <div class="absolute bottom-0 left-0 w-full p-6 md:p-10 transform translate-y-2 group-hover:translate-y-0 transition duration-500">
+                        <div class="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-6 bg-prime-black/40 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 group-hover:border-prime-gold/40 transition-colors duration-500">
+                            <div class="flex-1 w-full">
+                                <span class="text-prime-gold text-xs md:text-sm font-bold tracking-widest uppercase mb-3 block drop-shadow-md">Cortes Especiais</span>
+                                <h3 class="text-3xl md:text-4xl font-black text-prime-white mb-0 leading-tight drop-shadow-lg">Restaurantes Premium</h3>
                             </div>
-                            <div class="bg-gold-gradient text-prime-black font-black px-8 py-4 rounded-full text-sm uppercase tracking-wider shadow-[0_10px_20px_rgba(252,182,55,0.4)]">
-                                Peça 2, Pague 1
+                            <div class="shrink-0 bg-gold-gradient text-prime-black font-black px-8 py-4 rounded-full text-sm uppercase tracking-wider shadow-[0_10px_20px_rgba(252,182,55,0.3)] group-hover:shadow-[0_0_30px_rgba(252,182,55,0.6)] transform group-hover:scale-105 transition-all duration-300 whitespace-nowrap border border-white/20">
+                                <i class="fa-solid fa-ticket mr-2 opacity-80"></i> Peça 2, Pague 1
                             </div>
                         </div>
                     </div>
@@ -180,14 +205,14 @@
                         <i class="fa-solid fa-mobile-screen"></i>
                     </div>
                     <h3 class="text-2xl font-black mb-4 uppercase tracking-widest text-prime-black">1. O App</h3>
-                    <p class="text-gray-500 font-medium leading-relaxed text-lg">Faça o download do aplicativo oficial. Na tela de ativação da assinatura anual, insira o código <strong class="text-prime-black font-extrabold bg-prime-gold/20 px-2 py-1 rounded">BS10</strong> para garantir R$ 10 de desconto.</p>
+                    <p class="text-gray-500 font-medium leading-relaxed text-lg">Faça o download do app oficial. Na tela de ativação da assinatura anual da sua região favorita, insira o código <strong class="text-prime-black font-extrabold bg-prime-gold/20 px-2 py-1 rounded">BS10</strong> para garantir R$ 10 de desconto (válido para todo o Brasil).</p>
                 </div>
                 <div class="text-center bg-prime-white p-12 rounded-[2rem] shadow-[0_15px_40px_rgba(0,0,0,0.06)] border border-gray-100 hover:-translate-y-4 hover:shadow-[0_25px_50px_rgba(252,182,55,0.15)] transition duration-500 relative z-10 group">
                     <div class="w-24 h-24 bg-prime-black rounded-full flex items-center justify-center text-4xl text-prime-gold mx-auto shadow-2xl mb-8 border-[6px] border-prime-white group-hover:scale-110 group-hover:bg-prime-gold group-hover:text-prime-black transition duration-500">
                         <i class="fa-solid fa-utensils"></i>
                     </div>
                     <h3 class="text-2xl font-black mb-4 uppercase tracking-widest text-prime-black">2. A Escolha</h3>
-                    <p class="text-gray-500 font-medium leading-relaxed text-lg">Navegue pelas ofertas de nossa curadoria rigorosa e selecione o restaurante, hotel ou atração da Baixada Santista.</p>
+                    <p class="text-gray-500 font-medium leading-relaxed text-lg">Navegue pelas ofertas de nossa curadoria rigorosa e selecione o restaurante, hotel ou atração parceira na cidade escolhida.</p>
                 </div>
                 <div class="text-center bg-prime-white p-12 rounded-[2rem] shadow-[0_15px_40px_rgba(0,0,0,0.06)] border border-gray-100 hover:-translate-y-4 hover:shadow-[0_25px_50px_rgba(252,182,55,0.15)] transition duration-500 relative z-10 group">
                     <div class="w-24 h-24 bg-prime-black rounded-full flex items-center justify-center text-4xl text-prime-gold mx-auto shadow-2xl mb-8 border-[6px] border-prime-white group-hover:scale-110 group-hover:bg-prime-gold group-hover:text-prime-black transition duration-500">
@@ -243,11 +268,127 @@
                                 <div class="bg-prime-black py-6 rounded-2xl border border-prime-black shadow-inner">
                                     <span class="text-6xl font-black text-prime-gold tracking-widest animate-piscar block">BS10</span>
                                 </div>
-                                <p class="text-[#00E676] text-sm font-black mt-5 tracking-widest bg-[#00E676]/10 py-2 rounded-lg">- R$ 10,00 DE DESCONTO EXCLUSIVO</p>
+                                <p class="text-[#00E676] text-[11px] md:text-sm font-black mt-5 tracking-widest bg-[#00E676]/10 py-2 px-1 rounded-lg">- R$ 10 DE DESCONTO EM QUALQUER REGIÃO</p>
                             </div>
                             <a href="#baixar" class="block w-full bg-gold-gradient text-prime-black py-5 rounded-xl font-black text-lg uppercase tracking-widest shadow-[0_10px_20px_rgba(252,182,55,0.3)] transform hover:-translate-y-1 transition duration-300">
                                 Ativar Cupom Agora
                             </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-pattern text-prime-white border-b border-prime-black">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16">
+                <span class="inline-block border border-prime-gold text-prime-gold text-[10px] font-bold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6">FAQS</span>
+                <h2 class="text-4xl md:text-5xl font-black text-prime-white mb-4">DÚVIDAS FREQUENTES</h2>
+                <p class="text-gray-400 font-medium">O que você precisa saber sobre o Prime Gourmet</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <div class="space-y-4 md:space-y-6">
+                    <div class="faq-item bg-[#1C1A18] border border-prime-gold/30 rounded-xl overflow-hidden cursor-pointer hover:border-prime-gold/60 shadow-[0_0_15px_rgba(252,182,55,0.1)] transition duration-300">
+                        <button class="w-full px-6 py-5 text-left flex justify-between items-center font-bold text-sm md:text-base text-prime-gold focus:outline-none">
+                            O cupom BS10 vale para qualquer região?
+                            <i class="fa-solid fa-plus faq-icon text-lg text-prime-gold"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-sm text-gray-400 leading-relaxed font-medium">
+                            <strong>Sim, com certeza!</strong> O código de benefício <strong>BS10</strong> é o seu passaporte VIP. Ele garante R$ 10 de desconto imediato na assinatura de absolutamente <strong>qualquer região</strong> disponível no aplicativo Prime Gourmet em todo o Brasil. Basta escolher o seu destino, aplicar o cupom no carrinho e aproveitar!
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-[#1C1A18] border border-white/10 rounded-xl overflow-hidden cursor-pointer hover:border-prime-gold/40 transition duration-300">
+                        <button class="w-full px-6 py-5 text-left flex justify-between items-center font-bold text-sm md:text-base text-prime-white focus:outline-none">
+                            Todas as ofertas são pague 1 e ganhe 1?
+                            <i class="fa-solid fa-plus faq-icon text-lg text-gray-500"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-sm text-gray-400 leading-relaxed font-medium">
+                            Sim, todas as ofertas são iguais! Peça 2 pratos | 2 ingressos | 2 diárias e pague apenas 1. O desconto é sempre sobre o prato | ingresso | diária de igual ou menor valor. Disponibilizamos também ofertas bônus para pedidos no Delivery.
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-[#1C1A18] border border-white/10 rounded-xl overflow-hidden cursor-pointer hover:border-prime-gold/40 transition duration-300">
+                        <button class="w-full px-6 py-5 text-left flex justify-between items-center font-bold text-sm md:text-base text-prime-white focus:outline-none">
+                            Posso utilizar os vouchers mais de uma vez no mesmo lugar?
+                            <i class="fa-solid fa-plus faq-icon text-lg text-gray-500"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-sm text-gray-400 leading-relaxed font-medium">
+                            Não. Cada voucher só pode ser utilizado 1 vez por assinatura para garantir que você conheça novas experiências.
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-[#1C1A18] border border-white/10 rounded-xl overflow-hidden cursor-pointer hover:border-prime-gold/40 transition duration-300">
+                        <button class="w-full px-6 py-5 text-left flex justify-between items-center font-bold text-sm md:text-base text-prime-white focus:outline-none">
+                            Qual é o tempo de validade da assinatura?
+                            <i class="fa-solid fa-plus faq-icon text-lg text-gray-500"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-sm text-gray-400 leading-relaxed font-medium">
+                            Sua assinatura é válida por exatos 12 meses (1 ano) a partir da data de confirmação do pagamento no aplicativo.
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-[#1C1A18] border border-white/10 rounded-xl overflow-hidden cursor-pointer hover:border-prime-gold/40 transition duration-300">
+                        <button class="w-full px-6 py-5 text-left flex justify-between items-center font-bold text-sm md:text-base text-prime-white focus:outline-none">
+                            Terei direito a utilizar todas as ofertas de qualquer região?
+                            <i class="fa-solid fa-plus faq-icon text-lg text-gray-500"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-sm text-gray-400 leading-relaxed font-medium">
+                            Não, a assinatura garante acesso exclusivo apenas aos parceiros da região específica que você selecionou e adquiriu no app (porém o cupom de desconto BS10 pode ser usado na compra de qualquer uma delas).
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4 md:space-y-6">
+                    <div class="faq-item bg-[#1C1A18] border border-white/10 rounded-xl overflow-hidden cursor-pointer hover:border-prime-gold/40 transition duration-300">
+                        <button class="w-full px-6 py-5 text-left flex justify-between items-center font-bold text-sm md:text-base text-prime-white focus:outline-none">
+                            A assinatura é mensal ou pago apenas 1 vez?
+                            <i class="fa-solid fa-plus faq-icon text-lg text-gray-500"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-sm text-gray-400 leading-relaxed font-medium">
+                            O pagamento é único e tem validade anual. Ele pode ser parcelado no seu cartão de crédito diretamente pelo aplicativo.
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-[#1C1A18] border border-white/10 rounded-xl overflow-hidden cursor-pointer hover:border-prime-gold/40 transition duration-300">
+                        <button class="w-full px-6 py-5 text-left flex justify-between items-center font-bold text-sm md:text-base text-prime-white focus:outline-none">
+                            Os R$ 200 pago na assinatura é revertido em crédito para consumo?
+                            <i class="fa-solid fa-plus faq-icon text-lg text-gray-500"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-sm text-gray-400 leading-relaxed font-medium">
+                            Não. O valor pago é referente à ativação da sua licença anual que permite utilizar centenas de vouchers com descontos exclusivos.
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-[#1C1A18] border border-white/10 rounded-xl overflow-hidden cursor-pointer hover:border-prime-gold/40 transition duration-300">
+                        <button class="w-full px-6 py-5 text-left flex justify-between items-center font-bold text-sm md:text-base text-prime-white focus:outline-none">
+                            Como é a validação do voucher no aplicativo?
+                            <i class="fa-solid fa-plus faq-icon text-lg text-gray-500"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-sm text-gray-400 leading-relaxed font-medium">
+                            A validação ocorre de forma simples: o estabelecimento apresenta um QR Code no momento do pagamento e você escaneia com o seu app.
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-[#1C1A18] border border-white/10 rounded-xl overflow-hidden cursor-pointer hover:border-prime-gold/40 transition duration-300">
+                        <button class="w-full px-6 py-5 text-left flex justify-between items-center font-bold text-sm md:text-base text-prime-white focus:outline-none">
+                            Em que momento devo informar o uso do voucher?
+                            <i class="fa-solid fa-plus faq-icon text-lg text-gray-500"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-sm text-gray-400 leading-relaxed font-medium">
+                            Recomendamos que você informe que é cliente Prime Gourmet sempre ao chegar no estabelecimento ou antes de solicitar a conta final.
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-[#1C1A18] border border-white/10 rounded-xl overflow-hidden cursor-pointer hover:border-prime-gold/40 transition duration-300">
+                        <button class="w-full px-6 py-5 text-left flex justify-between items-center font-bold text-sm md:text-base text-prime-white focus:outline-none">
+                            Existe limitação de vouchers por mesa ou por dia?
+                            <i class="fa-solid fa-plus faq-icon text-lg text-gray-500"></i>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-sm text-gray-400 leading-relaxed font-medium">
+                            Geralmente os estabelecimentos impõem limites de uso simultâneo de vouchers na mesma mesa ou reserva. Verifique nas regras do app antes de consumir.
                         </div>
                     </div>
                 </div>
@@ -260,7 +401,7 @@
         <div class="container mx-auto px-6 relative z-10">
             <h2 class="text-5xl md:text-6xl font-black text-prime-black mb-8 tracking-tight">Comece agora mesmo.</h2>
             <p class="text-xl text-gray-600 font-medium mb-16 max-w-3xl mx-auto leading-relaxed">
-                Faça o download nas lojas oficiais, selecione a região <strong class="text-prime-black">Baixada Santista</strong> e insira o código <strong class="text-prime-gold bg-prime-black px-3 py-1 rounded-md shadow-md ml-1">BS10</strong> na tela de ativação.
+                Faça o download nas lojas oficiais, selecione a <strong>Baixada Santista (ou qualquer região do seu interesse)</strong> e insira o código <strong class="text-prime-gold bg-prime-black px-3 py-1 rounded-md shadow-md ml-1">BS10</strong> na tela de ativação.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-20">
                 <a href="https://apps.apple.com/br/app/prime-gourmet-club/id1500666866" target="_blank" class="group flex items-center justify-start gap-5 bg-prime-black text-prime-white w-[260px] h-[80px] px-8 rounded-full hover:bg-prime-neutral transition duration-300 shadow-[0_15px_30px_rgba(0,0,0,0.2)] border border-transparent hover:border-prime-gold/50 transform hover:-translate-y-1">
@@ -278,13 +419,14 @@
                     </div>
                 </a>
             </div>
-            <div class="inline-block bg-prime-neutral border border-prime-gold/40 px-16 py-12 rounded-[2.5rem] shadow-[0_25px_50px_rgba(0,0,0,0.2)] relative">
-                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-prime-gold text-prime-black px-6 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-lg">Código Ativo</div>
-                <div class="bg-prime-black py-8 px-16 rounded-[2rem] mb-8 mt-4 border border-white/5 shadow-inner">
-                    <span class="text-8xl font-black text-prime-gold tracking-widest animate-piscar block">BS10</span>
+
+            <div class="block mx-auto w-full max-w-2xl bg-prime-neutral border border-prime-gold/40 px-6 md:px-16 py-10 md:py-12 rounded-[2.5rem] shadow-[0_25px_50px_rgba(0,0,0,0.2)] relative">
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-prime-gold text-prime-black px-6 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-lg whitespace-nowrap">Código Universal</div>
+                <div class="bg-prime-black py-8 px-6 md:px-16 rounded-[2rem] mb-8 mt-4 border border-white/5 shadow-inner flex justify-center w-full">
+                    <span class="text-6xl md:text-8xl font-black text-prime-gold tracking-widest animate-piscar block break-all">BS10</span>
                 </div>
-                <div class="inline-flex items-center gap-3 bg-prime-gold/10 text-prime-white px-6 py-3 rounded-full text-base font-bold border border-prime-gold/30">
-                    <i class="fa-solid fa-gift text-prime-gold"></i> Desconto Exclusivo de R$ 10 na Assinatura
+                <div class="inline-flex items-center gap-3 justify-center text-center bg-prime-gold/10 text-prime-white px-4 py-3 rounded-full text-sm md:text-base font-bold border border-prime-gold/30">
+                    <i class="fa-solid fa-gift text-prime-gold shrink-0"></i> Válido para qualquer região do Brasil
                 </div>
             </div>
         </div>
@@ -299,13 +441,33 @@
                 <p class="text-xs uppercase tracking-widest font-black mb-3 text-prime-gold">Região Autorizada: Baixada Santista</p>
                 <p class="text-sm font-medium">© 2026 Prime Gourmet Club. Todos os direitos reservados.</p>
             </div>
+            
             <div class="flex items-center gap-8 text-3xl">
                 <a href="https://instagram.com/primegourmetbaixadasantista" target="_blank" class="text-prime-gold hover:text-prime-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition duration-300 transform hover:scale-110"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="text-prime-gold hover:text-prime-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition duration-300 transform hover:scale-110"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" class="text-prime-gold hover:text-prime-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition duration-300 transform hover:scale-110"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/p/Prime-Gourmet-Baixada-Santista-61565003881793/" target="_blank" class="text-prime-gold hover:text-prime-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition duration-300 transform hover:scale-110"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://wa.me/5511949012176" target="_blank" class="text-prime-gold hover:text-prime-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition duration-300 transform hover:scale-110"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const button = item.querySelector('button');
+                button.addEventListener('click', () => {
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
 
