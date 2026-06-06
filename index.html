@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -83,6 +83,35 @@
 </head>
 <body class="bg-prime-white text-prime-neutral font-sans antialiased selection:bg-prime-gold selection:text-prime-black">
 
+    <div id="promoModal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-500">
+        <div class="relative bg-[#111] border border-prime-gold/40 rounded-[2rem] shadow-[0_0_60px_rgba(252,182,55,0.2)] w-[90%] max-w-4xl flex flex-col md:flex-row overflow-hidden transform scale-95 transition-transform duration-500" id="promoModalContent">
+            <button id="closeModal" class="absolute -top-4 -right-4 md:top-4 md:right-4 bg-prime-gold text-prime-black w-10 h-10 rounded-full flex items-center justify-center font-black text-lg hover:bg-white hover:scale-110 transition duration-300 z-50 shadow-lg border-2 border-[#111]">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="p-8 md:p-12 flex-1 flex flex-col justify-center relative z-10 bg-gradient-to-r from-[#111] via-[#111] to-transparent">
+                <img src="logo.png" alt="Prime Gourmet Club" class="h-10 mb-8 object-contain">
+                <h2 class="text-3xl md:text-5xl font-light text-prime-white leading-tight mb-8">
+                    APROVEITE E USE O CUPOM <br>
+                    <span class="font-black text-prime-gold drop-shadow-[0_0_15px_rgba(252,182,55,0.3)]">DE DESCONTO</span> NA SUA <br>
+                    <span class="font-black text-prime-gold drop-shadow-[0_0_15px_rgba(252,182,55,0.3)]">PRIMEIRA COMPRA</span>
+                </h2>
+                <div class="relative inline-block text-center mt-4">
+                    <div class="border-2 border-dashed border-prime-gold/60 rounded-xl px-10 py-6 bg-prime-gold/5 relative">
+                        <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#111] px-4 text-xs font-bold tracking-widest text-gray-400">USE O CUPOM:</span>
+                        <span class="text-5xl md:text-6xl font-black text-prime-gold tracking-widest block animate-piscar">BS10</span>
+                        <div class="absolute -bottom-4 right-10 bg-[#111] px-2 text-prime-gold text-xl">
+                            <i class="fa-solid fa-scissors transform rotate-180"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:block md:w-2/5 relative">
+                <img src="portugues.png" alt="Gastronomia" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-[#111] via-[#111]/80 to-transparent"></div>
+            </div>
+        </div>
+    </div>
+
     <header class="fixed w-full bg-prime-black/90 backdrop-blur-lg text-prime-white z-50 shadow-[0_4px_30px_rgba(0,0,0,0.5)] border-b border-prime-gold/20 transition-all">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center">
@@ -100,22 +129,18 @@
     <section class="pt-40 pb-24 bg-pattern text-prime-white min-h-screen flex items-center relative overflow-hidden">
         <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-prime-gold/20 rounded-full blur-[150px] pointer-events-none"></div>
         <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-prime-gold/10 rounded-full blur-[120px] pointer-events-none"></div>
-
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-16 relative z-10">
             <div class="md:w-[55%] space-y-8">
                 <div class="inline-flex items-center gap-2 border border-prime-gold/50 bg-prime-neutral/40 backdrop-blur-md px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase text-prime-gold shadow-[0_0_20px_rgba(252,182,55,0.15)]">
                     <i class="fa-solid fa-gem text-yellow-300"></i> Uma forma elegante de utilizar descontos.
                 </div>
-                
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight drop-shadow-2xl">
                     Um guia turístico e gastronômico que eleva sua experiência:<br>
                     <span class="bg-clip-text text-transparent bg-gradient-to-r from-prime-gold to-yellow-200">Peça 2, Pague 1.</span>
                 </h1>
-                
                 <p class="text-lg md:text-xl text-gray-300 font-normal leading-relaxed max-w-2xl">
                     A perfeita combinação entre inteligência financeira e momentos inesquecíveis. Desfrute do melhor em estabelecimentos parceiros na Baixada Santista.
                 </p>
-                
                 <div class="pt-6">
                     <div class="bg-prime-neutral/80 backdrop-blur-xl border border-prime-gold/30 p-8 rounded-[2rem] max-w-lg text-center relative shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform hover:-translate-y-2 transition duration-500 group">
                         <div class="absolute -inset-0.5 bg-gradient-to-r from-prime-gold to-yellow-500 rounded-[2rem] opacity-20 group-hover:opacity-40 transition duration-500 blur"></div>
@@ -135,7 +160,6 @@
                     </div>
                 </div>
             </div>
-            
             <div class="md:w-[45%] flex justify-center relative">
                 <div class="absolute inset-0 bg-prime-gold/20 blur-[100px] rounded-full"></div>
                 <div class="relative w-full max-w-md rounded-[3rem] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.8)] border-[6px] border-prime-black bg-prime-white transform hover:-translate-y-4 hover:shadow-[0_40px_70px_rgba(252,182,55,0.2)] transition duration-700">
@@ -154,40 +178,92 @@
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_30px_60px_rgba(252,182,55,0.2)] group relative cursor-pointer border border-transparent hover:border-prime-gold/30 transition-all duration-500">
-                    <img src="portugues.png" alt="Alta Gastronomia" class="w-full h-[550px] md:h-[600px] object-cover transform group-hover:scale-110 transition duration-1000 ease-out">
-                    <div class="absolute inset-0 bg-gradient-to-t from-prime-black via-prime-black/60 to-transparent opacity-90 group-hover:opacity-100 transition duration-500"></div>
-                    
-                    <div class="absolute bottom-0 left-0 w-full p-6 md:p-10 transform translate-y-2 group-hover:translate-y-0 transition duration-500">
-                        <div class="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-6 bg-prime-black/40 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 group-hover:border-prime-gold/40 transition-colors duration-500">
-                            <div class="flex-1 w-full">
-                                <span class="text-prime-gold text-xs md:text-sm font-bold tracking-widest uppercase mb-3 block drop-shadow-md">Gastronomia Contemporânea</span>
-                                <h3 class="text-3xl md:text-4xl font-black text-prime-white mb-0 leading-tight drop-shadow-lg">Bistrôs e Experiências</h3>
-                            </div>
-                            <div class="shrink-0 bg-gold-gradient text-prime-black font-black px-8 py-4 rounded-full text-sm uppercase tracking-wider shadow-[0_10px_20px_rgba(252,182,55,0.3)] group-hover:shadow-[0_0_30px_rgba(252,182,55,0.6)] transform group-hover:scale-105 transition-all duration-300 whitespace-nowrap border border-white/20">
-                                <i class="fa-solid fa-ticket mr-2 opacity-80"></i> Peça 2, Pague 1
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-10">
+                
+                <div class="rounded-[2rem] overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_50px_rgba(252,182,55,0.25)] group relative cursor-pointer border border-transparent hover:border-prime-gold/30 transition-all duration-500">
+                    <img src="portugues.png" alt="Alta Gastronomia" class="w-full h-[400px] md:h-[450px] object-cover transform group-hover:scale-110 transition duration-1000 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-prime-black via-prime-black/50 to-transparent opacity-90 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 transform translate-y-2 group-hover:translate-y-0 transition duration-500">
+                        <div class="bg-prime-black/50 backdrop-blur-md p-6 rounded-2xl border border-white/10 group-hover:border-prime-gold/40 transition duration-500">
+                            <span class="text-prime-gold text-xs font-bold tracking-widest uppercase mb-2 block drop-shadow-md">Gastronomia</span>
+                            <h3 class="text-2xl font-black text-prime-white mb-4 leading-tight drop-shadow-lg">Bistrôs e Experiências</h3>
+                            <div class="inline-block bg-gold-gradient text-prime-black font-black px-6 py-3 rounded-full text-xs uppercase tracking-wider whitespace-nowrap border border-white/20">
+                                <i class="fa-solid fa-ticket mr-1.5"></i> Peça 2, Pague 1
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:shadow-[0_30px_60px_rgba(252,182,55,0.2)] group relative cursor-pointer border border-transparent hover:border-prime-gold/30 transition-all duration-500">
-                    <img src="carnesnobres.png" alt="Cortes Nobres" class="w-full h-[550px] md:h-[600px] object-cover transform group-hover:scale-110 transition duration-1000 ease-out">
-                    <div class="absolute inset-0 bg-gradient-to-t from-prime-black via-prime-black/60 to-transparent opacity-90 group-hover:opacity-100 transition duration-500"></div>
-                    
-                    <div class="absolute bottom-0 left-0 w-full p-6 md:p-10 transform translate-y-2 group-hover:translate-y-0 transition duration-500">
-                        <div class="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-6 bg-prime-black/40 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 group-hover:border-prime-gold/40 transition-colors duration-500">
-                            <div class="flex-1 w-full">
-                                <span class="text-prime-gold text-xs md:text-sm font-bold tracking-widest uppercase mb-3 block drop-shadow-md">Cortes Especiais</span>
-                                <h3 class="text-3xl md:text-4xl font-black text-prime-white mb-0 leading-tight drop-shadow-lg">Restaurantes Premium</h3>
-                            </div>
-                            <div class="shrink-0 bg-gold-gradient text-prime-black font-black px-8 py-4 rounded-full text-sm uppercase tracking-wider shadow-[0_10px_20px_rgba(252,182,55,0.3)] group-hover:shadow-[0_0_30px_rgba(252,182,55,0.6)] transform group-hover:scale-105 transition-all duration-300 whitespace-nowrap border border-white/20">
-                                <i class="fa-solid fa-ticket mr-2 opacity-80"></i> Peça 2, Pague 1
+                <div class="rounded-[2rem] overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_50px_rgba(252,182,55,0.25)] group relative cursor-pointer border border-transparent hover:border-prime-gold/30 transition-all duration-500">
+                    <img src="carnesnobres.png" alt="Cortes Nobres" class="w-full h-[400px] md:h-[450px] object-cover transform group-hover:scale-110 transition duration-1000 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-prime-black via-prime-black/50 to-transparent opacity-90 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 transform translate-y-2 group-hover:translate-y-0 transition duration-500">
+                        <div class="bg-prime-black/50 backdrop-blur-md p-6 rounded-2xl border border-white/10 group-hover:border-prime-gold/40 transition duration-500">
+                            <span class="text-prime-gold text-xs font-bold tracking-widest uppercase mb-2 block drop-shadow-md">Cortes Nobres</span>
+                            <h3 class="text-2xl font-black text-prime-white mb-4 leading-tight drop-shadow-lg">Restaurantes Premium</h3>
+                            <div class="inline-block bg-gold-gradient text-prime-black font-black px-6 py-3 rounded-full text-xs uppercase tracking-wider whitespace-nowrap border border-white/20">
+                                <i class="fa-solid fa-ticket mr-1.5"></i> Peça 2, Pague 1
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="rounded-[2rem] overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_50px_rgba(252,182,55,0.25)] group relative cursor-pointer border border-transparent hover:border-prime-gold/30 transition-all duration-500">
+                    <img src="hamburguer.png" alt="Hamburgueres Artesanais" class="w-full h-[400px] md:h-[450px] object-cover transform group-hover:scale-110 transition duration-1000 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-prime-black via-prime-black/50 to-transparent opacity-90 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 transform translate-y-2 group-hover:translate-y-0 transition duration-500">
+                        <div class="bg-prime-black/50 backdrop-blur-md p-6 rounded-2xl border border-white/10 group-hover:border-prime-gold/40 transition duration-500">
+                            <span class="text-prime-gold text-xs font-bold tracking-widest uppercase mb-2 block drop-shadow-md">Burgers</span>
+                            <h3 class="text-2xl font-black text-prime-white mb-4 leading-tight drop-shadow-lg">Hambúrgueres Artesanais</h3>
+                            <div class="inline-block bg-gold-gradient text-prime-black font-black px-6 py-3 rounded-full text-xs uppercase tracking-wider whitespace-nowrap border border-white/20">
+                                <i class="fa-solid fa-ticket mr-1.5"></i> Peça 2, Pague 1
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-[2rem] overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_50px_rgba(252,182,55,0.25)] group relative cursor-pointer border border-transparent hover:border-prime-gold/30 transition-all duration-500">
+                    <img src="pizza.pngt="Pizzas Artesanais" class="w-full h-[400px] md:h-[450px] object-cover transform group-hover:scale-110 transition duration-1000 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-prime-black via-prime-black/50 to-transparent opacity-90 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 transform translate-y-2 group-hover:translate-y-0 transition duration-500">
+                        <div class="bg-prime-black/50 backdrop-blur-md p-6 rounded-2xl border border-white/10 group-hover:border-prime-gold/40 transition duration-500">
+                            <span class="text-prime-gold text-xs font-bold tracking-widest uppercase mb-2 block drop-shadow-md">Pizzarias</span>
+                            <h3 class="text-2xl font-black text-prime-white mb-4 leading-tight drop-shadow-lg">Pizzas e Massas</h3>
+                            <div class="inline-block bg-gold-gradient text-prime-black font-black px-6 py-3 rounded-full text-xs uppercase tracking-wider whitespace-nowrap border border-white/20">
+                                <i class="fa-solid fa-ticket mr-1.5"></i> Peça 2, Pague 1
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-[2rem] overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_50px_rgba(252,182,55,0.25)] group relative cursor-pointer border border-transparent hover:border-prime-gold/30 transition-all duration-500">
+                    <img src="japonesa.png" alt="Comida Japonesa" class="w-full h-[400px] md:h-[450px] object-cover transform group-hover:scale-110 transition duration-1000 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-prime-black via-prime-black/50 to-transparent opacity-90 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 transform translate-y-2 group-hover:translate-y-0 transition duration-500">
+                        <div class="bg-prime-black/50 backdrop-blur-md p-6 rounded-2xl border border-white/10 group-hover:border-prime-gold/40 transition duration-500">
+                            <span class="text-prime-gold text-xs font-bold tracking-widest uppercase mb-2 block drop-shadow-md">Oriental</span>
+                            <h3 class="text-2xl font-black text-prime-white mb-4 leading-tight drop-shadow-lg">Sushi e Culinária Japonesa</h3>
+                            <div class="inline-block bg-gold-gradient text-prime-black font-black px-6 py-3 rounded-full text-xs uppercase tracking-wider whitespace-nowrap border border-white/20">
+                                <i class="fa-solid fa-ticket mr-1.5"></i> Peça 2, Pague 1
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-[2rem] overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_50px_rgba(252,182,55,0.25)] group relative cursor-pointer border border-transparent hover:border-prime-gold/30 transition-all duration-500">
+                    <img src="sobremesa.png" alt="Sobremesas" class="w-full h-[400px] md:h-[450px] object-cover transform group-hover:scale-110 transition duration-1000 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-prime-black via-prime-black/50 to-transparent opacity-90 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 transform translate-y-2 group-hover:translate-y-0 transition duration-500">
+                        <div class="bg-prime-black/50 backdrop-blur-md p-6 rounded-2xl border border-white/10 group-hover:border-prime-gold/40 transition duration-500">
+                            <span class="text-prime-gold text-xs font-bold tracking-widest uppercase mb-2 block drop-shadow-md">Doces</span>
+                            <h3 class="text-2xl font-black text-prime-white mb-4 leading-tight drop-shadow-lg">Sobremesas e Cafés</h3>
+                            <div class="inline-block bg-gold-gradient text-prime-black font-black px-6 py-3 rounded-full text-xs uppercase tracking-wider whitespace-nowrap border border-white/20">
+                                <i class="fa-solid fa-ticket mr-1.5"></i> Peça 2, Pague 1
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -287,7 +363,6 @@
                 <h2 class="text-4xl md:text-5xl font-black text-prime-white mb-4">DÚVIDAS FREQUENTES</h2>
                 <p class="text-gray-400 font-medium">O que você precisa saber sobre o Prime Gourmet</p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div class="space-y-4 md:space-y-6">
                     <div class="faq-item bg-[#1C1A18] border border-prime-gold/30 rounded-xl overflow-hidden cursor-pointer hover:border-prime-gold/60 shadow-[0_0_15px_rgba(252,182,55,0.1)] transition duration-300">
@@ -299,7 +374,6 @@
                             <strong>Sim, com certeza!</strong> O código de benefício <strong>BS10</strong> é o seu passaporte VIP. Ele garante R$ 10 de desconto imediato na assinatura de absolutamente <strong>qualquer região</strong> disponível no aplicativo Prime Gourmet em todo o Brasil. Basta escolher o seu destino, aplicar o cupom no carrinho e aproveitar!
                         </div>
                     </div>
-
                     <div class="faq-item bg-[#1C1A18] border border-white/10 rounded-xl overflow-hidden cursor-pointer hover:border-prime-gold/40 transition duration-300">
                         <button class="w-full px-6 py-5 text-left flex justify-between items-center font-bold text-sm md:text-base text-prime-white focus:outline-none">
                             Todas as ofertas são pague 1 e ganhe 1?
@@ -309,7 +383,6 @@
                             Sim, todas as ofertas são iguais! Peça 2 pratos | 2 ingressos | 2 diárias e pague apenas 1. O desconto é sempre sobre o prato | ingresso | diária de igual ou menor valor. Disponibilizamos também ofertas bônus para pedidos no Delivery.
                         </div>
                     </div>
-
                     <div class="faq-item bg-[#1C1A18] border border-white/10 rounded-xl overflow-hidden cursor-pointer hover:border-prime-gold/40 transition duration-300">
                         <button class="w-full px-6 py-5 text-left flex justify-between items-center font-bold text-sm md:text-base text-prime-white focus:outline-none">
                             Posso utilizar os vouchers mais de uma vez no mesmo lugar?
@@ -319,17 +392,17 @@
                             Não. Cada voucher só pode ser utilizado 1 vez por assinatura para garantir que você conheça novas experiências.
                         </div>
                     </div>
-
                     <div class="faq-item bg-[#1C1A18] border border-white/10 rounded-xl overflow-hidden cursor-pointer hover:border-prime-gold/40 transition duration-300">
                         <button class="w-full px-6 py-5 text-left flex justify-between items-center font-bold text-sm md:text-base text-prime-white focus:outline-none">
                             Qual é o tempo de validade da assinatura?
-                            <i class="fa-solid fa-plus faq-icon text-lg text-gray-500"></i>
+                            <i class="fa-solid fa-plus faq-icon text-lg text-prime-gold"></i>
                         </button>
                         <div class="faq-answer px-6 pb-6 text-sm text-gray-400 leading-relaxed font-medium">
                             Sua assinatura é válida por exatos 12 meses (1 ano) a partir da data de confirmação do pagamento no aplicativo.
                         </div>
                     </div>
-
+                </div>
+                <div class="space-y-4 md:space-y-6">
                     <div class="faq-item bg-[#1C1A18] border border-white/10 rounded-xl overflow-hidden cursor-pointer hover:border-prime-gold/40 transition duration-300">
                         <button class="w-full px-6 py-5 text-left flex justify-between items-center font-bold text-sm md:text-base text-prime-white focus:outline-none">
                             Terei direito a utilizar todas as ofertas de qualquer região?
@@ -339,9 +412,6 @@
                             Não, a assinatura garante acesso exclusivo apenas aos parceiros da região específica que você selecionou e adquiriu no app (porém o cupom de desconto BS10 pode ser usado na compra de qualquer uma delas).
                         </div>
                     </div>
-                </div>
-
-                <div class="space-y-4 md:space-y-6">
                     <div class="faq-item bg-[#1C1A18] border border-white/10 rounded-xl overflow-hidden cursor-pointer hover:border-prime-gold/40 transition duration-300">
                         <button class="w-full px-6 py-5 text-left flex justify-between items-center font-bold text-sm md:text-base text-prime-white focus:outline-none">
                             A assinatura é mensal ou pago apenas 1 vez?
@@ -351,7 +421,6 @@
                             O pagamento é único e tem validade anual. Ele pode ser parcelado no seu cartão de crédito diretamente pelo aplicativo.
                         </div>
                     </div>
-
                     <div class="faq-item bg-[#1C1A18] border border-white/10 rounded-xl overflow-hidden cursor-pointer hover:border-prime-gold/40 transition duration-300">
                         <button class="w-full px-6 py-5 text-left flex justify-between items-center font-bold text-sm md:text-base text-prime-white focus:outline-none">
                             Os R$ 200 pago na assinatura é revertido em crédito para consumo?
@@ -361,27 +430,6 @@
                             Não. O valor pago é referente à ativação da sua licença anual que permite utilizar centenas de vouchers com descontos exclusivos.
                         </div>
                     </div>
-
-                    <div class="faq-item bg-[#1C1A18] border border-white/10 rounded-xl overflow-hidden cursor-pointer hover:border-prime-gold/40 transition duration-300">
-                        <button class="w-full px-6 py-5 text-left flex justify-between items-center font-bold text-sm md:text-base text-prime-white focus:outline-none">
-                            Como é a validação do voucher no aplicativo?
-                            <i class="fa-solid fa-plus faq-icon text-lg text-gray-500"></i>
-                        </button>
-                        <div class="faq-answer px-6 pb-6 text-sm text-gray-400 leading-relaxed font-medium">
-                            A validação ocorre de forma simples: o estabelecimento apresenta um QR Code no momento do pagamento e você escaneia com o seu app.
-                        </div>
-                    </div>
-
-                    <div class="faq-item bg-[#1C1A18] border border-white/10 rounded-xl overflow-hidden cursor-pointer hover:border-prime-gold/40 transition duration-300">
-                        <button class="w-full px-6 py-5 text-left flex justify-between items-center font-bold text-sm md:text-base text-prime-white focus:outline-none">
-                            Em que momento devo informar o uso do voucher?
-                            <i class="fa-solid fa-plus faq-icon text-lg text-gray-500"></i>
-                        </button>
-                        <div class="faq-answer px-6 pb-6 text-sm text-gray-400 leading-relaxed font-medium">
-                            Recomendamos que você informe que é cliente Prime Gourmet sempre ao chegar no estabelecimento ou antes de solicitar a conta final.
-                        </div>
-                    </div>
-
                     <div class="faq-item bg-[#1C1A18] border border-white/10 rounded-xl overflow-hidden cursor-pointer hover:border-prime-gold/40 transition duration-300">
                         <button class="w-full px-6 py-5 text-left flex justify-between items-center font-bold text-sm md:text-base text-prime-white focus:outline-none">
                             Existe limitação de vouchers por mesa ou por dia?
@@ -419,7 +467,6 @@
                     </div>
                 </a>
             </div>
-
             <div class="block mx-auto w-full max-w-2xl bg-prime-neutral border border-prime-gold/40 px-6 md:px-16 py-10 md:py-12 rounded-[2.5rem] shadow-[0_25px_50px_rgba(0,0,0,0.2)] relative">
                 <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-prime-gold text-prime-black px-6 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-lg whitespace-nowrap">Código Universal</div>
                 <div class="bg-prime-black py-8 px-6 md:px-16 rounded-[2rem] mb-8 mt-4 border border-white/5 shadow-inner flex justify-center w-full">
@@ -441,7 +488,6 @@
                 <p class="text-xs uppercase tracking-widest font-black mb-3 text-prime-gold">Região Autorizada: Baixada Santista</p>
                 <p class="text-sm font-medium">© 2026 Prime Gourmet Club. Todos os direitos reservados.</p>
             </div>
-            
             <div class="flex items-center gap-8 text-3xl">
                 <a href="https://instagram.com/primegourmetbaixadasantista" target="_blank" class="text-prime-gold hover:text-prime-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition duration-300 transform hover:scale-110"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://www.facebook.com/p/Prime-Gourmet-Baixada-Santista-61565003881793/" target="_blank" class="text-prime-gold hover:text-prime-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition duration-300 transform hover:scale-110"><i class="fa-brands fa-facebook-f"></i></a>
@@ -452,8 +498,8 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Lógica do FAQ
             const faqItems = document.querySelectorAll('.faq-item');
-            
             faqItems.forEach(item => {
                 const button = item.querySelector('button');
                 button.addEventListener('click', () => {
@@ -462,9 +508,30 @@
                             otherItem.classList.remove('active');
                         }
                     });
-                    
                     item.classList.toggle('active');
                 });
+            });
+
+            // Lógica do Popup Promocional
+            const modal = document.getElementById('promoModal');
+            const modalContent = document.getElementById('promoModalContent');
+            const closeModalBtn = document.getElementById('closeModal');
+
+            const fecharModal = () => {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                modalContent.classList.remove('scale-100');
+                modalContent.classList.add('scale-95');
+            };
+
+            setTimeout(() => {
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modalContent.classList.remove('scale-95');
+                modalContent.classList.add('scale-100');
+            }, 1500);
+
+            closeModalBtn.addEventListener('click', fecharModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) fecharModal();
             });
         });
     </script>
