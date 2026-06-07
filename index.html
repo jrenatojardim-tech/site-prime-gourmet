@@ -80,7 +80,6 @@
             color: #FCB637;
         }
 
-        /* Animação do Toast Notification (Copiado) */
         @keyframes slideInUp {
             from { transform: translateY(100%); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
@@ -89,61 +88,58 @@
             from { opacity: 1; }
             to { opacity: 0; }
         }
-        .toast-enter { animation: slideInUp 0.3s ease-out forwards; }
+        .toast-enter { animation: slideInUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
         .toast-exit { animation: fadeOut 0.3s ease-in forwards; }
     </style>
 </head>
 <body class="bg-prime-white text-prime-neutral font-sans antialiased selection:bg-prime-gold selection:text-prime-black">
 
-    <div class="fixed top-0 left-0 w-full bg-gold-gradient text-prime-black z-[80] h-10 md:h-12 flex items-center justify-center shadow-[0_4px_20px_rgba(252,182,55,0.4)]">
-        <p class="text-[9px] md:text-[12px] font-black uppercase tracking-widest flex items-center gap-2">
-            <i class="fa-solid fa-clock text-red-600 animate-pulse"></i>
-            <span class="hidden sm:inline">Desconto de R$ 10 termina em:</span>
-            <span id="countdownTimer" class="bg-prime-black text-prime-white px-2 py-0.5 rounded shadow-inner tracking-widest font-mono text-[10px] md:text-[13px]">15:00</span>
-            <span class="ml-1">Use cupom: <strong class="text-red-700 bg-white/50 px-1 rounded cursor-pointer hover:bg-white transition" onclick="copyPromoCode()">BS10 <i class="fa-regular fa-copy text-[9px]"></i></strong></span>
+    <div class="fixed top-0 left-0 w-full bg-gold-gradient text-prime-black z-[80] py-3 md:py-4 flex items-center justify-center shadow-[0_4px_20px_rgba(252,182,55,0.4)]">
+        <p class="text-[10px] md:text-sm font-black uppercase tracking-widest flex items-center gap-2 md:gap-4 text-center px-4">
+            <i class="fa-solid fa-gem text-white drop-shadow-md text-sm md:text-base animate-pulse"></i>
+            <span>
+                <span class="hidden md:inline">Economia Inteligente: </span>Recupere o valor da assinatura nos primeiros usos. 
+                <span class="hidden sm:inline">Use o código</span>
+                <strong class="bg-prime-black text-prime-gold px-3 py-1.5 md:py-1 rounded-md shadow-lg cursor-pointer hover:bg-white hover:text-prime-black hover:scale-105 transition-all duration-300 ml-1 inline-flex items-center gap-1" onclick="copyPromoCode()" title="Clique para copiar">
+                    BS10 <i class="fa-regular fa-copy text-[10px]"></i>
+                </strong>
+            </span>
         </p>
     </div>
 
-    <a href="https://wa.me/5511949012176?text=Olá!%20Gostaria%20de%20ajuda%20para%20ativar%20minha%20assinatura%20do%20Prime%20Gourmet%20com%20o%20cupom%20BS10." target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_0_20px_rgba(37,211,102,0.5)] hover:scale-110 hover:bg-[#1EBE5D] transition-all duration-300 z-50 animate-bounce cursor-pointer group">
+    <a href="https://wa.me/5511949012176?text=Olá!%20Gostaria%20de%20ajuda%20para%20ativar%20minha%20assinatura%20do%20Prime%20Gourmet%20com%20o%20cupom%20BS10." target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center text-3xl md:text-4xl shadow-[0_0_20px_rgba(37,211,102,0.5)] hover:scale-110 hover:bg-[#1EBE5D] transition-all duration-300 z-50 animate-bounce cursor-pointer group">
         <i class="fa-brands fa-whatsapp"></i>
-        <span class="absolute right-16 bg-white text-prime-black text-[10px] font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap shadow-lg pointer-events-none">Dúvidas? Fale conosco!</span>
+        <span class="absolute right-20 bg-white text-prime-black text-[11px] font-black px-4 py-2 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap shadow-xl pointer-events-none uppercase tracking-wider">Atendimento VIP</span>
     </a>
 
-    <div id="toastNotification" class="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full font-bold text-sm shadow-[0_10px_30px_rgba(0,0,0,0.3)] z-[200] hidden items-center gap-2">
-        <i class="fa-solid fa-circle-check"></i> Código BS10 copiado com sucesso!
+    <div id="toastNotification" class="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-prime-black border-2 border-prime-gold text-prime-gold px-8 py-4 rounded-full font-black text-sm md:text-base uppercase tracking-widest shadow-[0_15px_40px_rgba(0,0,0,0.5)] z-[200] hidden items-center gap-3">
+        <i class="fa-solid fa-circle-check text-xl"></i> Código BS10 copiado com sucesso!
     </div>
 
     <div id="promoModal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-500 p-4">
         <div class="relative bg-[#0a0a0a] border border-prime-gold/30 rounded-[2.5rem] shadow-[0_0_80px_rgba(252,182,55,0.25)] w-full max-w-4xl flex flex-col md:flex-row overflow-hidden transform scale-95 transition-transform duration-500" id="promoModalContent">
-            
             <button id="closeModal" class="absolute -top-4 -right-4 md:top-6 md:right-6 bg-prime-gold text-prime-black w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center font-black text-lg md:text-xl hover:bg-white hover:scale-110 transition duration-300 z-50 shadow-[0_0_20px_rgba(252,182,55,0.4)] border-4 border-[#0a0a0a]">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-
             <div class="p-8 md:p-14 flex-1 flex flex-col justify-center relative z-10 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a] to-transparent">
                 <div class="inline-flex items-center gap-2 border border-prime-gold/40 bg-prime-gold/10 px-4 py-1.5 rounded-full text-[10px] font-bold tracking-widest uppercase text-prime-gold w-fit mb-6 shadow-sm">
                     <i class="fa-solid fa-star"></i> Acesso VIP Liberado
                 </div>
-                
                 <h2 class="text-3xl md:text-5xl font-black text-prime-white leading-tight mb-4 uppercase">
                     GARANTA O SEU <br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-prime-gold to-yellow-200 drop-shadow-[0_0_15px_rgba(252,182,55,0.3)]">DESCONTO EXCLUSIVO</span>
                 </h2>
-                
                 <p class="text-gray-400 text-sm md:text-base font-medium mb-8 max-w-sm leading-relaxed">
                     Ative sua assinatura anual agora e ganhe <strong class="text-prime-white">R$ 10 de desconto imediato</strong>. O benefício é válido para qualquer região do Brasil!
                 </p>
-                
                 <div class="bg-prime-black/80 border-2 border-dashed border-prime-gold/50 rounded-2xl p-6 relative w-fit mb-8 shadow-[0_0_30px_rgba(252,182,55,0.1)] cursor-pointer hover:bg-prime-gold/10 transition group" onclick="copyPromoCode()">
                     <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#0a0a0a] px-4 text-[10px] font-bold tracking-widest text-prime-gold uppercase whitespace-nowrap group-hover:text-white transition">Clique para Copiar</span>
                     <span class="text-5xl md:text-6xl font-black text-prime-gold tracking-widest block animate-piscar text-center">BS10</span>
                 </div>
-
                 <a href="#baixar" id="btnBaixarPopup" class="inline-flex items-center justify-center gap-3 bg-gold-gradient text-prime-black font-black px-8 py-4 rounded-full text-sm md:text-base uppercase tracking-widest shadow-[0_15px_30px_rgba(252,182,55,0.3)] hover:shadow-[0_20px_40px_rgba(252,182,55,0.5)] transform hover:-translate-y-1 transition-all duration-300 w-fit">
                     <i class="fa-solid fa-download text-lg"></i> Baixar App Agora
                 </a>
             </div>
-            
             <div class="hidden md:block md:w-[45%] relative">
                 <img src="portugues.png" alt="Gastronomia" class="absolute inset-0 w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent"></div>
@@ -151,21 +147,21 @@
         </div>
     </div>
 
-    <header class="fixed top-10 md:top-12 w-full bg-prime-black/90 backdrop-blur-lg text-prime-white z-50 shadow-[0_4px_30px_rgba(0,0,0,0.5)] border-b border-prime-gold/20 transition-all">
+    <header class="fixed top-[44px] md:top-[56px] w-full bg-prime-black/90 backdrop-blur-lg text-prime-white z-50 shadow-[0_4px_30px_rgba(0,0,0,0.5)] border-b border-prime-gold/20 transition-all">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center">
                 <img src="logo.png" alt="Prime Gourmet Club" class="h-10 md:h-12 object-contain hover:scale-105 transition duration-300">
             </div>
             <div class="flex items-center gap-6">
-                <span class="hidden md:block text-xs text-prime-gold font-semibold tracking-widest uppercase">Baixada Santista</span>
-                <a href="#baixar" class="bg-transparent border-2 border-prime-gold text-prime-gold px-8 py-2 rounded-full font-bold hover:bg-prime-gold hover:text-prime-black transition duration-300 hidden sm:block tracking-wide text-sm uppercase shadow-[0_0_15px_rgba(252,182,55,0.2)] hover:shadow-[0_0_25px_rgba(252,182,55,0.6)]">
+                <span class="hidden md:block text-xs text-prime-gold font-bold tracking-widest uppercase">Baixada Santista</span>
+                <a href="#baixar" class="bg-transparent border-2 border-prime-gold text-prime-gold px-8 py-2 rounded-full font-black hover:bg-prime-gold hover:text-prime-black transition duration-300 hidden sm:block tracking-widest text-xs uppercase shadow-[0_0_15px_rgba(252,182,55,0.2)] hover:shadow-[0_0_25px_rgba(252,182,55,0.6)]">
                     Seja Membro VIP
                 </a>
             </div>
         </div>
     </header>
 
-    <section class="pt-48 md:pt-52 pb-24 bg-pattern text-prime-white min-h-screen flex items-center relative overflow-hidden">
+    <section class="pt-52 md:pt-60 pb-24 bg-pattern text-prime-white min-h-screen flex items-center relative overflow-hidden">
         <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-prime-gold/20 rounded-full blur-[150px] pointer-events-none"></div>
         <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-prime-gold/10 rounded-full blur-[120px] pointer-events-none"></div>
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-16 relative z-10">
@@ -301,7 +297,70 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="py-32 bg-prime-neutral text-prime-white relative overflow-hidden border-t border-white/5">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-prime-gold/5 rounded-full blur-[150px] pointer-events-none"></div>
+        <div class="container mx-auto px-6 relative z-10 max-w-6xl">
+            <div class="text-center mb-20">
+                <span class="inline-block border border-prime-gold/50 text-prime-gold text-xs font-bold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6 bg-prime-gold/10">Aprovado pelo público</span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-prime-white mb-6">O que dizem nossos membros VIP</h2>
+                <div class="flex justify-center items-center gap-3 text-prime-gold text-2xl mb-4">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p class="text-gray-400 font-medium">Classificação 4.7 na App Store com milhares de avaliações.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-prime-black/50 backdrop-blur-sm p-8 rounded-3xl border border-white/5 hover:border-prime-gold/30 transition-all duration-300 shadow-xl">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <p class="font-bold text-lg text-prime-white">"Recuperei no 1º dia!"</p>
+                            <div class="flex gap-1 text-prime-gold text-xs mt-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 font-medium">Assinei com o cupom BS10 e fui jantar em um bistrô na Baixada Santista com minha esposa. O prato dela (R$ 120) saiu de graça. O app já se pagou e ainda tenho 1 ano para usar.</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-prime-neutral rounded-full flex items-center justify-center font-bold text-prime-gold">RC</div>
+                        <p class="text-xs text-gray-500 font-bold uppercase tracking-wider">Roberto C. - Há 2 dias</p>
+                    </div>
+                </div>
+
+                <div class="bg-prime-black/50 backdrop-blur-sm p-8 rounded-3xl border border-white/5 hover:border-prime-gold/30 transition-all duration-300 shadow-xl">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <p class="font-bold text-lg text-prime-white">"Perfeito para viagens"</p>
+                            <div class="flex gap-1 text-prime-gold text-xs mt-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 font-medium">Uso na minha cidade e sempre compro a região de Gramado quando viajo para lá no inverno. A economia em fondues e parques é gigantesca. Melhor investimento que fiz.</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-prime-neutral rounded-full flex items-center justify-center font-bold text-prime-gold">MS</div>
+                        <p class="text-xs text-gray-500 font-bold uppercase tracking-wider">Mariana S. - Há 1 semana</p>
+                    </div>
+                </div>
+
+                <div class="bg-prime-black/50 backdrop-blur-sm p-8 rounded-3xl border border-white/5 hover:border-prime-gold/30 transition-all duration-300 shadow-xl">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <p class="font-bold text-lg text-prime-white">"Aplicativo muito fácil"</p>
+                            <div class="flex gap-1 text-prime-gold text-xs mt-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 font-medium">Gosto da praticidade. Chego no local, peço 2 pratos, leio o QR Code na hora de pagar e pronto. Sem constrangimento, tratamento super VIP em todos os parceiros.</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-prime-neutral rounded-full flex items-center justify-center font-bold text-prime-gold">PL</div>
+                        <p class="text-xs text-gray-500 font-bold uppercase tracking-wider">Pedro L. - Há 2 semanas</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -309,7 +368,7 @@
     <section class="py-32 bg-gray-50 border-t border-gray-200" id="como-funciona">
         <div class="container mx-auto px-6">
             <div class="text-center mb-24">
-                <span class="inline-block border border-prime-gold/50 text-prime-gold text-xs font-bold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6 bg-prime-gold/10">Acesso Exclusivo</span>
+                <span class="inline-block border border-prime-gold/50 text-prime-gold text-xs font-bold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6 bg-prime-gold/10">Passo a Passo</span>
                 <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-prime-black">Como aproveitar os benefícios</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative max-w-6xl mx-auto">
@@ -319,7 +378,7 @@
                         <i class="fa-solid fa-mobile-screen"></i>
                     </div>
                     <h3 class="text-2xl font-black mb-4 uppercase tracking-widest text-prime-black">1. O App</h3>
-                    <p class="text-gray-500 font-medium leading-relaxed text-lg">Faça o download do app oficial. Na tela de ativação da assinatura anual da sua região favorita, insira o código <strong class="text-prime-black font-extrabold bg-prime-gold/20 px-2 py-1 rounded cursor-pointer hover:bg-prime-gold/40 transition" title="Copiar" onclick="copyPromoCode()">BS10</strong> para garantir R$ 10 de desconto.</p>
+                    <p class="text-gray-500 font-medium leading-relaxed text-lg">Faça o download do app oficial. Na tela de ativação da assinatura anual da sua região, insira o código <strong class="text-prime-black font-extrabold bg-prime-gold/20 px-2 py-1 rounded cursor-pointer hover:bg-prime-gold/40 transition" title="Copiar" onclick="copyPromoCode()">BS10</strong> para garantir R$ 10 de desconto.</p>
                 </div>
                 <div class="text-center bg-prime-white p-12 rounded-[2rem] shadow-[0_15px_40px_rgba(0,0,0,0.06)] border border-gray-100 hover:-translate-y-4 hover:shadow-[0_25px_50px_rgba(252,182,55,0.15)] transition duration-500 relative z-10 group">
                     <div class="w-24 h-24 bg-prime-black rounded-full flex items-center justify-center text-4xl text-prime-gold mx-auto shadow-2xl mb-8 border-[6px] border-prime-white group-hover:scale-110 group-hover:bg-prime-gold group-hover:text-prime-black transition duration-500">
@@ -344,10 +403,10 @@
         <div class="container mx-auto px-6 max-w-6xl relative z-10">
             <div class="flex flex-col lg:flex-row items-center justify-between gap-20">
                 <div class="lg:w-1/2">
-                    <span class="text-prime-gold text-sm font-bold tracking-[0.2em] uppercase block mb-4 border-l-4 border-prime-gold pl-4">Privilégio de Boas-Vindas</span>
-                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight">Um investimento que retorna nas primeiras experiências.</h2>
+                    <span class="text-prime-gold text-sm font-bold tracking-[0.2em] uppercase block mb-4 border-l-4 border-prime-gold pl-4">Retorno Garantido</span>
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight">Um investimento que se paga na primeira saída.</h2>
                     <p class="text-gray-400 font-medium text-xl mb-12 leading-relaxed">
-                        Ser membro do Prime Gourmet Club transforma o consumo em uma experiência inteligente. O valor da anuidade é facilmente recuperado nos seus primeiros usos.
+                        Ser membro do Prime Gourmet Club é consumir com inteligência. O valor da anuidade é matematicamente recuperado logo no seu primeiro uso.
                     </p>
                     <div class="space-y-8">
                         <div class="flex items-start gap-6 bg-prime-black/40 p-6 rounded-2xl border border-white/5 hover:border-prime-gold/30 transition duration-300">
@@ -356,7 +415,7 @@
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-prime-white mb-1">Jantar de Alta Gastronomia</h4>
-                                <p class="text-gray-400 font-medium text-base">Valor do prato principal: <span class="text-prime-white font-bold">R$ 100,00</span></p>
+                                <p class="text-gray-400 font-medium text-base">Valor de dois pratos: R$ 200,00 | <span class="text-prime-gold font-bold">Você paga: R$ 100,00</span></p>
                             </div>
                         </div>
                         <div class="flex items-start gap-6 bg-prime-black/40 p-6 rounded-2xl border border-white/5 hover:border-prime-gold/30 transition duration-300">
@@ -364,8 +423,8 @@
                                 <i class="fa-solid fa-check text-prime-gold text-lg"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold text-prime-white mb-1">Filosofia Peça 2, Pague 1</h4>
-                                <p class="text-gray-400 font-medium text-base">O segundo prato de igual ou menor valor é <span class="text-prime-gold font-bold">cortesia</span> do estabelecimento.</p>
+                                <h4 class="text-xl font-bold text-prime-white mb-1">Economia Imediata</h4>
+                                <p class="text-gray-400 font-medium text-base">Em apenas um jantar você já economizou R$ 100,00. Metade da assinatura paga no dia 1.</p>
                             </div>
                         </div>
                     </div>
@@ -400,7 +459,7 @@
             <div class="text-center mb-16">
                 <span class="inline-block border border-prime-gold text-prime-gold text-[10px] font-bold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-6">FAQS</span>
                 <h2 class="text-4xl md:text-5xl font-black text-prime-white mb-4">DÚVIDAS FREQUENTES</h2>
-                <p class="text-gray-400 font-medium">O que você precisa saber sobre o Prime Gourmet</p>
+                <p class="text-gray-400 font-medium">Tudo que você precisa saber para começar a economizar</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div class="space-y-4 md:space-y-6">
@@ -486,9 +545,9 @@
     <section class="py-32 bg-prime-white text-center relative overflow-hidden" id="baixar">
         <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-4xl h-full bg-prime-gold/5 blur-[100px] rounded-full pointer-events-none"></div>
         <div class="container mx-auto px-6 relative z-10">
-            <h2 class="text-5xl md:text-6xl font-black text-prime-black mb-8 tracking-tight">Comece agora mesmo.</h2>
+            <h2 class="text-5xl md:text-6xl font-black text-prime-black mb-8 tracking-tight">Comece a economizar agora.</h2>
             <p class="text-xl text-gray-600 font-medium mb-16 max-w-3xl mx-auto leading-relaxed">
-                Faça o download nas lojas oficiais, selecione a <strong>Baixada Santista (ou qualquer região do seu interesse)</strong> e insira o código <strong class="text-prime-gold bg-prime-black px-3 py-1 rounded-md shadow-md ml-1 cursor-pointer hover:bg-prime-neutral transition" title="Copiar" onclick="copyPromoCode()">BS10</strong> na tela de ativação.
+                Faça o download nas lojas oficiais, selecione a região do seu interesse e insira o código VIP <strong class="text-prime-gold bg-prime-black px-3 py-1 rounded-md shadow-md ml-1 cursor-pointer hover:bg-prime-neutral transition" title="Copiar" onclick="copyPromoCode()">BS10</strong> na tela de ativação.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-20">
                 <a href="https://apps.apple.com/br/app/prime-gourmet-club/id1500666866" target="_blank" class="group flex items-center justify-start gap-5 bg-prime-black text-prime-white w-[260px] h-[80px] px-8 rounded-full hover:bg-prime-neutral transition duration-300 shadow-[0_15px_30px_rgba(0,0,0,0.2)] border border-transparent hover:border-prime-gold/50 transform hover:-translate-y-1">
@@ -511,7 +570,7 @@
                 <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-prime-gold text-prime-black px-6 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-lg whitespace-nowrap">Código Universal</div>
                 <div class="bg-prime-black py-8 px-6 md:px-16 rounded-[2rem] mb-8 mt-4 border border-white/5 shadow-inner flex flex-col justify-center w-full group-hover:border-prime-gold/50 transition">
                     <span class="text-6xl md:text-8xl font-black text-prime-gold tracking-widest animate-piscar block break-all text-center">BS10</span>
-                    <span class="text-[10px] md:text-xs text-gray-400 font-bold uppercase tracking-widest text-center mt-4 group-hover:text-white transition"><i class="fa-regular fa-copy"></i> Clique aqui para copiar</span>
+                    <span class="text-[10px] md:text-xs text-gray-400 font-bold uppercase tracking-widest text-center mt-4 group-hover:text-white transition"><i class="fa-regular fa-copy"></i> Clique aqui para copiar o cupom</span>
                 </div>
                 <div class="inline-flex items-center gap-3 justify-center text-center bg-prime-gold/10 text-prime-white px-4 py-3 rounded-full text-sm md:text-base font-bold border border-prime-gold/30">
                     <i class="fa-solid fa-gift text-prime-gold shrink-0"></i> Válido para qualquer região do Brasil
@@ -539,7 +598,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // LÓGICA DO FAQ
+            // FAQ
             const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {
                 const button = item.querySelector('button');
@@ -553,7 +612,7 @@
                 });
             });
 
-            // LÓGICA DO POPUP PROMOCIONAL
+            // POPUP
             const modal = document.getElementById('promoModal');
             const modalContent = document.getElementById('promoModalContent');
             const closeModalBtn = document.getElementById('closeModal');
@@ -576,27 +635,9 @@
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) fecharModal();
             });
-
-            // LÓGICA DO CONTADOR REGRESSIVO (Gatilho Escassez)
-            let timeInSeconds = 15 * 60; // 15 minutos
-            const timerElement = document.getElementById('countdownTimer');
-            
-            const updateTimer = () => {
-                const minutes = Math.floor(timeInSeconds / 60);
-                const seconds = timeInSeconds % 60;
-                timerElement.innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-                
-                if (timeInSeconds > 0) {
-                    timeInSeconds--;
-                } else {
-                    timeInSeconds = 15 * 60; // Reinicia para não perder o gatilho de quem ficou com aba aberta
-                }
-            };
-            setInterval(updateTimer, 1000);
-            updateTimer();
         });
 
-        // LÓGICA DA ÁREA DE TRANSFERÊNCIA (Copiar Cupom)
+        // ÁREA DE TRANSFERÊNCIA (Copiar Cupom Mágico)
         function copyPromoCode() {
             const code = "BS10";
             navigator.clipboard.writeText(code).then(() => {
